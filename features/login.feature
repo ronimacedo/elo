@@ -12,26 +12,17 @@ Funcionalidade: Login
         Quando faço login com "eu@papito.io" e "123456"
         Então vejo a seguinte mensagem "Olá, Fernando"
 
-    Cenario: Senha incorreta
+    @tentativa
+    Esquema do Cenário: Tentando logar
 
         Dado que eu acessei o sistema
-        Quando faço login com senha incorreta
-        Então vejo a seguinte mensagem "Senha inválida."
+        Quando faço login com "<email>" e "<senha>"
+        Então vejo a seguinte mensagem "<alerta>"
 
-    Cenario: Usuário não cadastrado
-
-        Dado que eu acessei o sistema
-        Quando faço com um email que não está cadastrado
-        Então vejo a seguinte mensagem "Usuário não cadastrado."
-
-    Cenario: Email deve obrigatório
-
-        Dado que eu acessei o sistema
-        Quando faço login sem informar o email
-        Então vejo a mensagem "Email incorreto ou ausente."
-
-    Cenario: Senha deve ser obrigatória
-
-        Dado que eu acessei o sistema
-        Quando faço login sem informar a senha
-        Então vejo a mensagem "Senha ausente."
+        Exemplos: 
+        | email         | senha  | alerta                                 |
+        | eu@papito.io  | abc123 | Senha inválida.                        |
+        | 404@papito.io | abc123 | Usuário não cadastrado.                |
+        |               | abc123 | Email incorreto ou ausente.            |
+        | eu@papito.io  |        | Senha ausente.                         |
+        | eu@papito.io  | 12345  | Senha deve ter no mínimo 6 caracteres. |
