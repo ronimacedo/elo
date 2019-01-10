@@ -5,6 +5,7 @@ Funcionalidade: Apagar tarefas
     Sendo um usuário que possui uma tarefa indesejada
     Posso remover uma tarefa
 
+    @auth 
     Cenario: Apagar uma tarefa
 
         Dado que "Estudar Java" é uma tarefa indesejada
@@ -12,6 +13,7 @@ Funcionalidade: Apagar tarefas
         E confirmo esta solicitação
         Então está tarefa não deve ser exibida na lista
 
+    @auth @tmp
     Cenario: Deixa queto
 
         Dado que "Comprar Ketchup" é uma tarefa indesejada

@@ -9,5 +9,8 @@ Before('@auth') do
 end
 
 After('@auth') do
-  puts 'Deslogando com sucesso'
+  visit '/logout'
+  expect(
+    page.has_css?('#login_form')
+  ).to be true
 end

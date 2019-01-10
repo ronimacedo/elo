@@ -2,7 +2,7 @@ class LoginPage
   include Capybara::DSL
 
   def load
-    visit 'https://mark7.herokuapp.com'
+    visit '/'
   end
 
   def logar(email, senha)
