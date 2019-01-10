@@ -1,6 +1,10 @@
 class LoginPage
   include Capybara::DSL
 
+  def load
+    visit 'https://mark7.herokuapp.com'
+  end
+
   def logar(email, senha)
     find('#login_email').set email
     find('#login_password').set senha
