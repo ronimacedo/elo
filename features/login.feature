@@ -9,7 +9,7 @@ Funcionalidade: Login
     Contexto: Home page
         Dado que eu acessei o sistema
 
-    @login
+    @login @smoke
     Cenario: Usuário autenticado
         Quando faço login com "eu@papito.io" e "123456"
         Então vejo a seguinte mensagem "Olá, Fernando"
