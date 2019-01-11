@@ -21,5 +21,5 @@ After do |scenario|
   nome = nome.tr(' ', '_').downcase!
   shot = "log/shots/#{nome}.png"
   page.save_screenshot(shot) # Capybara tira o Screenshot
-  # embed(shot, 'image/png', 'Evidência :)') # Cucumber anexa o Screenshot no report
+  embed(shot, 'image/png', 'Evidência :)') # Cucumber anexa o Screenshot no report
 end
