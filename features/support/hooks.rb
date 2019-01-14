@@ -1,15 +1,15 @@
 Before do
   page.current_window.resize_to(1440, 900)
+  @login_page = LoginPage.new
   @task_page = TaskPage.new
 end
 
 Before('@auth') do
-  login_page = LoginPage.new
-  login_page.load
-  login_page.logar('eu@papito.io', '123456')
+  @login_page.load
+  @login_page.logar('eu@papito.io', '123456')
 end
 
-After('@auth') do
+After('@auth', '@login') do
   visit '/logout'
   expect(
     page.has_css?('#login_form')
