@@ -18,7 +18,7 @@ if 'remote'.eql?(@browser)
     Capybara::Selenium::Driver.new(
       app,
       browser: :remote,
-      url: 'http://selenium_server:4444/wd/hub',
+      url: 'http://selenium:4444/wd/hub',
       desired_capabilities: caps
     )
   end
