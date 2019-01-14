@@ -9,7 +9,7 @@ pipeline {
         stage("Build") {
             steps {
                 sh "bundle install"
-                sh "cucumber"
+                sh "bundle exec cucumber -p ci"
             }
         }
     }
